@@ -1,8 +1,16 @@
+import { useNavigate } from "react-router-dom";
+
 import styled from "styled-components";
 import { theme } from "@/styles/theme";
 import Footer from "@components/common/Footer";
 
 export default function Intro4() {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/install");
+  };
+
   return (
     <>
       <Container>
@@ -23,9 +31,7 @@ export default function Intro4() {
             해보세요
           </Title>
         </div>
-        <Guidebtn href="https://deployz.co.kr/oauth2/authorization/gitlab">
-          Install Guide
-        </Guidebtn>
+        <Guidebtn onClick={handleClick}>Install Guide</Guidebtn>
       </Container>
       <Footer />
     </>
