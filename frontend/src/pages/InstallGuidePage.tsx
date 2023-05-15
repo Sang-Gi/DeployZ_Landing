@@ -8,7 +8,7 @@ import "react-vertical-timeline-component/style.min.css";
 import LaptopChromebookIcon from "@mui/icons-material/LaptopChromebook";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
-import CircleIcon from "@mui/icons-material/Circle";
+import { styled as mstyled } from "@mui/material/styles";
 
 export default function InstallGuidePage() {
   return (
@@ -26,18 +26,21 @@ export default function InstallGuidePage() {
         </SInstallGuideNameDiv>
         <SInstallGuideButtonDiv>
           <SInstallGuideClick>
-            <CircleIcon style={CircleIconStyle} />
-            <LaptopChromebookIcon style={LaptopChromebookIconStyle} />
+            <CircleIcon>
+              <LaptopIcon />
+            </CircleIcon>
             <SBuildDiv>체크 리스트</SBuildDiv>
           </SInstallGuideClick>
           <SInstallGuideClick>
-            <CircleIcon style={CircleIconStyle} />
-            <FileDownloadIcon style={FileDownloadIconStyle} />
+            <CircleIcon>
+              <FileDownload />
+            </CircleIcon>
             <SBuildDiv>Docker 설치</SBuildDiv>
           </SInstallGuideClick>
           <SInstallGuideClick>
-            <CircleIcon style={CircleIconStyle} />
-            <CloudUploadIcon style={CloudUploadIconStyle} />
+            <CircleIcon>
+              <CloudUpload />
+            </CircleIcon>
             <SBuildDiv>DeployZ 설치</SBuildDiv>
           </SInstallGuideClick>
         </SInstallGuideButtonDiv>
@@ -80,36 +83,62 @@ const SBuildDiv = styled.div`
   font-size: 3rem;
   font-weight: ${theme.fontWeight.bold};
   color: ${theme.colors.primary};
-  border-radius: 0.2rem;
+  border-radius: 0.3rem;
   border: 0.15rem solid ${theme.colors.darkgray};
   box-shadow: 0 0.3rem 0.5rem ${theme.colors.darkgray};
+  z-index: 1;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 `;
 
-const LaptopChromebookIconStyle = {
+const LaptopIcon = mstyled(LaptopChromebookIcon)({
   fontSize: "7rem",
-  color: theme.colors.white,
-};
+  color: theme.colors.primary,
+  position: "relative",
+  top: "-0.1rem",
+  zIndex: 3,
+});
 
-const FileDownloadIconStyle = {
+const FileDownload = mstyled(FileDownloadIcon)({
   fontSize: "7rem",
-  color: theme.colors.white,
-};
+  color: theme.colors.primary,
+  position: "relative",
+  top: "-0.2rem",
+  zIndex: 3,
+});
 
-const CloudUploadIconStyle = {
+const CloudUpload = mstyled(CloudUploadIcon)({
   fontSize: "7rem",
-  color: theme.colors.white,
-};
+  color: theme.colors.primary,
+  position: "relative",
+  top: "-0.4rem",
+  zIndex: 3,
+});
 
-const CircleIconStyle = {
-  fontSize: "14rem",
-  color: theme.colors.white,
-};
-
+const CircleIcon = styled.div`
+  width: 6rem;
+  height: 6rem;
+  padding: 3rem;
+  border-radius: 100%;
+  background-color: ${theme.colors.white};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 6.5rem;
+  z-index: 2;
+  border: 0.2rem solid ${theme.colors.darkgray};
+  box-shadow: 0 0.3rem 0.4rem rgba(0, 0, 0, 0.2);
+`;
 const SInstallGuideButtonDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
+  gap: 1.8rem;
 `;
 
 const SInstallGuideClick = styled.div`
@@ -147,6 +176,8 @@ const SInstallGuideNameDiv = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
+  top: 5rem;
 `;
 
 const ModalContainer = styled.div`
