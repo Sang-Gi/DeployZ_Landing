@@ -56,7 +56,11 @@ export default function DeployzInstall() {
             onCopy={() => info("복사되었습니다.")}
           >
             <ColorContainer>
-              <text>$ docker run --name test -d -p 8784:80 deployz:test</text>
+              <span style={{ fontWeight: `${theme.fontWeight.extrabold}` }}>
+                $
+              </span>
+              &nbsp;
+              <text>docker run --name test -d -p 8784:80 deployz:test</text>
               <CopyIcon />
             </ColorContainer>
           </CopyToClipboard>
