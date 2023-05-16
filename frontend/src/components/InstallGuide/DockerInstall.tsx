@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { theme } from "@/styles/theme";
 import { styled as mstyled } from "@mui/material/styles";
-import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+import ContentCopyIcon from "@mui/icons-material/FileCopyRounded";
 import { CopyToClipboard } from "react-copy-to-clipboard/src";
 import { info } from "@components/common/Toast/notify";
 import FileDownloadIcon from "@mui/icons-material/FileDownload";
@@ -41,10 +41,7 @@ export default function DockerInstall() {
             onCopy={() => info("복사되었습니다.")}
           >
             <ColorContainer>
-              <span style={{ fontWeight: `${theme.fontWeight.extrabold}` }}>
-                $
-              </span>
-              &nbsp; sudo apt-get update
+              $ sudo apt-get update
               <CopyIcon />
             </ColorContainer>
           </CopyToClipboard>
@@ -58,10 +55,7 @@ lsb-release"
             onCopy={() => info("복사되었습니다.")}
           >
             <ColorContainer>
-              <span style={{ fontWeight: `${theme.fontWeight.extrabold}` }}>
-                $
-              </span>
-              &nbsp; sudo apt-get install \ <br />
+              $ sudo apt-get install \ <br />
               &emsp;ca-certificates \ <br />
               &emsp;curl \ <br />
               &emsp;gnupg \ <br />
@@ -87,10 +81,7 @@ lsb-release"
             onCopy={() => info("복사되었습니다.")}
           >
             <ColorContainer>
-              <span style={{ fontWeight: `${theme.fontWeight.extrabold}` }}>
-                $
-              </span>
-              &nbsp;sudo mkdir -p /etc/apt/keyrings
+              $ sudo mkdir -p /etc/apt/keyrings
               <CopyIcon />
             </ColorContainer>
           </CopyToClipboard>
@@ -101,11 +92,8 @@ lsb-release"
             onCopy={() => info("복사되었습니다.")}
           >
             <ColorContainer>
-              <span style={{ fontWeight: `${theme.fontWeight.extrabold}` }}>
-                $
-              </span>
-              &nbsp; curl -fsSL https://download.docker.com/linux/ubuntu/gpg |
-              sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+              $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo
+              gpg --dearmor -o /etc/apt/keyrings/docker.gpg
               <CopyIcon />
             </ColorContainer>
           </CopyToClipboard>
@@ -129,10 +117,7 @@ $(lsb_release -cs) stable | sudo tee /etc/apt/sources.list.d/docker.list > /dev/
             onCopy={() => info("복사되었습니다.")}
           >
             <ColorContainer>
-              <span style={{ fontWeight: `${theme.fontWeight.extrabold}` }}>
-                $
-              </span>
-              &nbsp; echo \ "deb [arch=$(dpkg --print-architecture)
+              $ echo \ "deb [arch=$(dpkg --print-architecture)
               signed-by=/etc/apt/keyrings/docker.gpg]
               https://download.docker.com/linux/ubuntu \ $(lsb_release -cs)
               stable" | sudo tee /etc/apt/sources.list.d/docker.list {">"}{" "}
@@ -158,10 +143,7 @@ $(lsb_release -cs) stable | sudo tee /etc/apt/sources.list.d/docker.list > /dev/
             onCopy={() => info("복사되었습니다.")}
           >
             <ColorContainer>
-              <span style={{ fontWeight: `${theme.fontWeight.extrabold}` }}>
-                $
-              </span>
-              &nbsp;sudo apt-get update
+              $ sudo apt-get update
               <CopyIcon />
             </ColorContainer>
           </CopyToClipboard>
@@ -171,10 +153,7 @@ $(lsb_release -cs) stable | sudo tee /etc/apt/sources.list.d/docker.list > /dev/
             onCopy={() => info("복사되었습니다.")}
           >
             <ColorContainer>
-              <span style={{ fontWeight: `${theme.fontWeight.extrabold}` }}>
-                $
-              </span>
-              &nbsp; sudo apt-get install docker-ce docker-ce-cli containerd.io
+              $ sudo apt-get install docker-ce docker-ce-cli containerd.io
               docker-compose-plugin
               <CopyIcon />
             </ColorContainer>
@@ -197,10 +176,7 @@ $(lsb_release -cs) stable | sudo tee /etc/apt/sources.list.d/docker.list > /dev/
             onCopy={() => info("복사되었습니다.")}
           >
             <ColorContainer>
-              <span style={{ fontWeight: `${theme.fontWeight.extrabold}` }}>
-                $
-              </span>
-              &nbsp;sudo docker -v
+              $ sudo docker -v
               <CopyIcon />
             </ColorContainer>
           </CopyToClipboard>
@@ -222,10 +198,7 @@ $(lsb_release -cs) stable | sudo tee /etc/apt/sources.list.d/docker.list > /dev/
             onCopy={() => info("복사되었습니다.")}
           >
             <ColorContainer>
-              <span style={{ fontWeight: `${theme.fontWeight.extrabold}` }}>
-                $
-              </span>
-              &nbsp;sudo apt-get update
+              $ sudo apt-get update
               <CopyIcon />
             </ColorContainer>
           </CopyToClipboard>
@@ -235,10 +208,7 @@ $(lsb_release -cs) stable | sudo tee /etc/apt/sources.list.d/docker.list > /dev/
             onCopy={() => info("복사되었습니다.")}
           >
             <ColorContainer>
-              <span style={{ fontWeight: `${theme.fontWeight.extrabold}` }}>
-                $
-              </span>
-              &nbsp;sudo apt-get install nginx
+              $ sudo apt-get install nginx
               <CopyIcon />
             </ColorContainer>
           </CopyToClipboard>
@@ -279,6 +249,8 @@ const ColorContainer = styled.div`
   margin: 1rem 0;
   width: 100%;
   box-shadow: 0 0.3rem 0.5rem ${theme.colors.darkgray};
+  display: flex;
+  justify-content: space-between;
 `;
 
 const SDescP = styled.p`
