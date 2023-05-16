@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { theme } from "@/styles/theme";
 import { styled as mstyled } from "@mui/material/styles";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
-import ContentCopyIcon from "@mui/icons-material/ContentCopy";
+import ContentCopyIcon from "@mui/icons-material/FileCopyRounded";
 import { CopyToClipboard } from "react-copy-to-clipboard/src";
 import { info } from "@components/common/Toast/notify";
 
@@ -15,7 +15,10 @@ export default function DeployzInstall() {
           DeployZ 설치
         </STitleDiv>
         <SDescDiv>
-          <SDescP>DeployZ를 설치하고 자동배포하기</SDescP>
+          <SDescP>
+            DeployZ를 설치하고{" "}
+            <span style={{ color: `${theme.colors.error}` }}>자동배포</span>하기
+          </SDescP>
         </SDescDiv>
         <div
           style={{
@@ -34,7 +37,7 @@ export default function DeployzInstall() {
             onCopy={() => info("복사되었습니다.")}
           >
             <ColorContainer>
-              <text>https://hub.docker.com/</text>
+              $ &nbsp;https://hub.docker.com/
               <CopyIcon />
             </ColorContainer>
           </CopyToClipboard>
@@ -56,15 +59,20 @@ export default function DeployzInstall() {
             onCopy={() => info("복사되었습니다.")}
           >
             <ColorContainer>
-              <span style={{ fontWeight: `${theme.fontWeight.extrabold}` }}>
-                $
-              </span>
-              &nbsp;
-              <text>docker run --name test -d -p 8784:80 deployz:test</text>
+              $ &nbsp; docker run --name test -d -p 8784:80 deployz:test
               <CopyIcon />
             </ColorContainer>
           </CopyToClipboard>
         </Bottomdiv>
+        <div
+          style={{
+            width: "100%",
+            textAlign: "center",
+            borderBottom: "1px solid #aaa",
+            lineHeight: "0.1em",
+            margin: "2rem 0",
+          }}
+        />
       </Container>
     </>
   );
@@ -73,8 +81,8 @@ export default function DeployzInstall() {
 const NameDiv = styled.div`
   font-size: 2rem;
   color: ${theme.colors.primary};
-  font-weight: ${theme.fontWeight.bold};
-  padding: 0.5rem;
+  font-weight: ${theme.fontWeight.extraBold};
+  margin-bottom: 1rem;
 `;
 
 const CopyIcon = mstyled(ContentCopyIcon)({
@@ -91,9 +99,13 @@ const ColorContainer = styled.div`
   background-color: ${theme.colors.lightgray};
   font-weight: ${theme.fontWeight.semibold};
   font-size: 1.5rem;
-  padding: 1rem;
+  padding: 2rem 3rem;
   border-radius: 1rem;
-  margin-top: 1rem;
+  margin: 1rem 0;
+  width: 100%;
+  box-shadow: 0 0.3rem 0.5rem ${theme.colors.darkgray};
+  display: flex;
+  justify-content: space-between;
 `;
 const CloudUpload = mstyled(CloudUploadIcon)({
   fontSize: "6.5rem",
@@ -136,7 +148,8 @@ const STitleDiv = styled.div`
 const Bottomdiv = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   flex-direction: column;
+  width: 60%;
   padding: 2rem;
 `;
