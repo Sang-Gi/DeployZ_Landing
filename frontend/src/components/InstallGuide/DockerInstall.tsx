@@ -35,34 +35,34 @@ export default function DockerInstall() {
           }}
         />
         <Bottomdiv>
-          <CopyToClipboard
-            className="Toram"
-            text="sudo apt-get update"
-            onCopy={() => info("복사되었습니다.")}
-          >
-            <ColorContainer>
-              $ sudo apt-get update
+          <ColorContainer>
+            $ sudo apt-get update
+            <CopyToClipboard
+              className="Toram"
+              text="sudo apt-get update"
+              onCopy={() => info("복사되었습니다.")}
+            >
               <CopyIcon />
-            </ColorContainer>
-          </CopyToClipboard>
-          <CopyToClipboard
-            className="Toram"
-            text="sudo apt-get install \
+            </CopyToClipboard>
+          </ColorContainer>
+          <ColorContainer>
+            $ sudo apt-get install \ <br />
+            &emsp;ca-certificates \ <br />
+            &emsp;curl \ <br />
+            &emsp;gnupg \ <br />
+            &emsp;lsb-release
+            <CopyToClipboard
+              className="Toram"
+              text="sudo apt-get install \
 ca-certificates \
 curl \
 gnupg \
 lsb-release"
-            onCopy={() => info("복사되었습니다.")}
-          >
-            <ColorContainer>
-              $ sudo apt-get install \ <br />
-              &emsp;ca-certificates \ <br />
-              &emsp;curl \ <br />
-              &emsp;gnupg \ <br />
-              &emsp;lsb-release
+              onCopy={() => info("복사되었습니다.")}
+            >
               <CopyIcon />
-            </ColorContainer>
-          </CopyToClipboard>
+            </CopyToClipboard>
+          </ColorContainer>
         </Bottomdiv>
         <div
           style={{
@@ -75,27 +75,27 @@ lsb-release"
         />
         <Bottomdiv>
           <Title>| 도커의 공식 GPG Key 추가</Title>
-          <CopyToClipboard
-            className="Toram"
-            text="sudo mkdir -p /etc/apt/keyrings"
-            onCopy={() => info("복사되었습니다.")}
-          >
-            <ColorContainer>
-              $ sudo mkdir -p /etc/apt/keyrings
+          <ColorContainer>
+            $ sudo mkdir -p /etc/apt/keyrings
+            <CopyToClipboard
+              className="Toram"
+              text="sudo mkdir -p /etc/apt/keyrings"
+              onCopy={() => info("복사되었습니다.")}
+            >
               <CopyIcon />
-            </ColorContainer>
-          </CopyToClipboard>
-          <CopyToClipboard
-            className="Toram"
-            text="curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg"
-            onCopy={() => info("복사되었습니다.")}
-          >
-            <ColorContainer>
-              $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo
-              gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+            </CopyToClipboard>
+          </ColorContainer>
+          <ColorContainer>
+            $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg
+            --dearmor -o /etc/apt/keyrings/docker.gpg
+            <CopyToClipboard
+              className="Toram"
+              text="curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg"
+              onCopy={() => info("복사되었습니다.")}
+            >
               <CopyIcon />
-            </ColorContainer>
-          </CopyToClipboard>
+            </CopyToClipboard>
+          </ColorContainer>
         </Bottomdiv>
         <div
           style={{
@@ -108,23 +108,23 @@ lsb-release"
         />
         <Bottomdiv>
           <Title>| 레포지토리 셋업</Title>
-          <CopyToClipboard
-            className="Toram"
-            text='echo \
+          <ColorContainer>
+            $ echo \ <br />
+            "deb [arch=$(dpkg --print-architecture)
+            signed-by=/etc/apt/keyrings/docker.gpg]
+            https://download.docker.com/linux/ubuntu \ $(lsb_release -cs)
+            stable" | sudo tee /etc/apt/sources.list.d/docker.list {">"}{" "}
+            /dev/null
+            <CopyToClipboard
+              className="Toram"
+              text='echo \
 "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
 $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null'
-            onCopy={() => info("복사되었습니다.")}
-          >
-            <ColorContainer>
-              $ echo \ <br />
-              "deb [arch=$(dpkg --print-architecture)
-              signed-by=/etc/apt/keyrings/docker.gpg]
-              https://download.docker.com/linux/ubuntu \ $(lsb_release -cs)
-              stable" | sudo tee /etc/apt/sources.list.d/docker.list {">"}{" "}
-              /dev/null
+              onCopy={() => info("복사되었습니다.")}
+            >
               <CopyIcon />
-            </ColorContainer>
-          </CopyToClipboard>
+            </CopyToClipboard>
+          </ColorContainer>
         </Bottomdiv>
         <div
           style={{
@@ -137,27 +137,27 @@ $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev
         />
         <Bottomdiv>
           <Title>| 도커 엔진 설치</Title>
-          <CopyToClipboard
-            className="Toram"
-            text="sudo apt-get update"
-            onCopy={() => info("복사되었습니다.")}
-          >
-            <ColorContainer>
-              $ sudo apt-get update
+          <ColorContainer>
+            $ sudo apt-get update
+            <CopyToClipboard
+              className="Toram"
+              text="sudo apt-get update"
+              onCopy={() => info("복사되었습니다.")}
+            >
               <CopyIcon />
-            </ColorContainer>
-          </CopyToClipboard>
-          <CopyToClipboard
-            className="Toram"
-            text="sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin"
-            onCopy={() => info("복사되었습니다.")}
-          >
-            <ColorContainer>
-              $ sudo apt-get install docker-ce docker-ce-cli containerd.io
-              docker-compose-plugin
+            </CopyToClipboard>
+          </ColorContainer>
+          <ColorContainer>
+            $ sudo apt-get install docker-ce docker-ce-cli containerd.io
+            docker-compose-plugin
+            <CopyToClipboard
+              className="Toram"
+              text="sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin"
+              onCopy={() => info("복사되었습니다.")}
+            >
               <CopyIcon />
-            </ColorContainer>
-          </CopyToClipboard>
+            </CopyToClipboard>
+          </ColorContainer>
         </Bottomdiv>
         <div
           style={{
@@ -170,16 +170,16 @@ $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev
         />
         <Bottomdiv>
           <Title>| 도커 설치 확인</Title>
-          <CopyToClipboard
-            className="Toram"
-            text="sudo docker -v"
-            onCopy={() => info("복사되었습니다.")}
-          >
-            <ColorContainer>
-              $ sudo docker -v
+          <ColorContainer>
+            $ sudo docker -v
+            <CopyToClipboard
+              className="Toram"
+              text="sudo docker -v"
+              onCopy={() => info("복사되었습니다.")}
+            >
               <CopyIcon />
-            </ColorContainer>
-          </CopyToClipboard>
+            </CopyToClipboard>
+          </ColorContainer>
         </Bottomdiv>
         <div
           style={{
@@ -192,26 +192,26 @@ $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev
         />
         <Bottomdiv>
           <Title>| Nginx 설치</Title>
-          <CopyToClipboard
-            className="Toram"
-            text="sudo apt-get update"
-            onCopy={() => info("복사되었습니다.")}
-          >
-            <ColorContainer>
-              $ sudo apt-get update
+          <ColorContainer>
+            $ sudo apt-get update
+            <CopyToClipboard
+              className="Toram"
+              text="sudo apt-get update"
+              onCopy={() => info("복사되었습니다.")}
+            >
               <CopyIcon />
-            </ColorContainer>
-          </CopyToClipboard>
-          <CopyToClipboard
-            className="Toram"
-            text="sudo apt-get install nginx"
-            onCopy={() => info("복사되었습니다.")}
-          >
-            <ColorContainer>
-              $ sudo apt-get install nginx
+            </CopyToClipboard>
+          </ColorContainer>
+          <ColorContainer>
+            $ sudo apt-get install nginx
+            <CopyToClipboard
+              className="Toram"
+              text="sudo apt-get install nginx"
+              onCopy={() => info("복사되었습니다.")}
+            >
               <CopyIcon />
-            </ColorContainer>
-          </CopyToClipboard>
+            </CopyToClipboard>
+          </ColorContainer>
         </Bottomdiv>
         <div
           style={{
