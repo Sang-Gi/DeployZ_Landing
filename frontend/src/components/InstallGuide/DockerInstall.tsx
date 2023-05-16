@@ -76,7 +76,6 @@ const FileDownload = mstyled(FileDownloadIcon)({
   color: theme.colors.white,
   position: "relative",
   top: "1.8rem",
-  zIndex: 3,
   paddingRight: "1.5rem",
 });
 
