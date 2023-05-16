@@ -7,18 +7,21 @@ import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { styled as mstyled } from "@mui/material/styles";
 import { CopyToClipboard } from "react-copy-to-clipboard/src";
 import { info } from "@components/common/Toast/notify";
+import LaptopChromebookIcon from "@mui/icons-material/LaptopChromebook";
 
 export default function CheckList() {
   return (
     <>
       <ModalContainer>
         <SInstallGuideNameDiv>
-          <STitleDiv>체크 리스트</STitleDiv>
+          <STitleDiv>
+            <LaptopIcon />
+            체크 리스트
+          </STitleDiv>
           <SDescDiv>
             <SDescP>
-              apt의 패키기 인덱스를 최신화하고,
-              <br />
-              apt가 HTTPS를 통해 패키지를 설치할 수 있도록 설정
+              1. AWS EC2 서버 및 도메인
+              <br /> 2. SSH 접속 환경(.pem 키)
             </SDescP>
           </SDescDiv>
         </SInstallGuideNameDiv>
@@ -50,6 +53,14 @@ export default function CheckList() {
     </>
   );
 }
+
+const LaptopIcon = mstyled(LaptopChromebookIcon)({
+  fontSize: "6.5rem",
+  color: theme.colors.white,
+  position: "relative",
+  top: "1.8rem",
+  paddingRight: "1.5rem",
+});
 
 const SDescP = styled.p`
   font-size: 1.5rem;
@@ -94,7 +105,6 @@ const ModalContainer = styled.div`
   border-radius: 4vh;
   /* background: ${theme.colors.container}; */
   color: ${theme.colors.primary};
-  overflow: auto;
   ::-webkit-scrollbar {
     display: none;
   }
@@ -121,7 +131,8 @@ const Contentdiv = styled.div`
   justify-content: center;
   align-items: start;
   flex-direction: column;
-  padding: 0;
+  font-size: 1.8rem;
+  font-weight: ${theme.fontWeight.medium};
 `;
 const ColorContainer = styled.div`
   background-color: ${theme.colors.lightgray};
@@ -135,44 +146,18 @@ const ColorContainer = styled.div`
 const timelineData = [
   {
     icon: <RiNumber1 />,
-    title: "1. apt 패키지 인덱스 최신화",
+    title: "AWS EC2",
     content: (
       <Contentdiv>
-        <CopyToClipboard
-          className="Toram"
-          text="sudo systemctl stop nginx"
-          onCopy={() => info("복사되었습니다.")}
-        >
-          <ColorContainer>
-            <text>sudo apt-get update</text>
-            <CopyIcon />
-          </ColorContainer>
-        </CopyToClipboard>
+        EC2 서버
+        <br />
+        EC2 도메인
       </Contentdiv>
     ),
   },
   {
     icon: <RiNumber2 />,
-    title: "2. apt가 HTTPS를 통해 패키지 설치 가능하도록 설정",
-    content: (
-      <Contentdiv>
-        <CopyToClipboard
-          className="Toram"
-          text="sudo apt-get update"
-          onCopy={() => info("복사되었습니다.")}
-        >
-          <ColorContainer>
-            <text>
-              sudo apt-get install \ <br />
-              ca-certificates \ <br />
-              curl \ <br />
-              gnupg \ <br />
-              lsb-release
-            </text>
-            <CopyIcon />
-          </ColorContainer>
-        </CopyToClipboard>
-      </Contentdiv>
-    ),
+    title: "SSH 접속 환경",
+    content: <Contentdiv>.pem 키</Contentdiv>,
   },
 ];
