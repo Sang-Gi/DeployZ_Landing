@@ -87,8 +87,7 @@ lsb-release"
           </CopyToClipboard>
           <CopyToClipboard
             className="Toram"
-            text="curl -fsSL https://download.docker.com/linux/ubuntu/gpg |
-            sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg"
+            text="curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg"
             onCopy={() => info("복사되었습니다.")}
           >
             <ColorContainer>
@@ -111,13 +110,14 @@ lsb-release"
           <Title>| 레포지토리 셋업</Title>
           <CopyToClipboard
             className="Toram"
-            text="echo \
-deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-$(lsb_release -cs) stable | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null"
+            text='echo \
+"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null'
             onCopy={() => info("복사되었습니다.")}
           >
             <ColorContainer>
-              $ echo \ "deb [arch=$(dpkg --print-architecture)
+              $ echo \ <br />
+              "deb [arch=$(dpkg --print-architecture)
               signed-by=/etc/apt/keyrings/docker.gpg]
               https://download.docker.com/linux/ubuntu \ $(lsb_release -cs)
               stable" | sudo tee /etc/apt/sources.list.d/docker.list {">"}{" "}
@@ -213,6 +213,15 @@ $(lsb_release -cs) stable | sudo tee /etc/apt/sources.list.d/docker.list > /dev/
             </ColorContainer>
           </CopyToClipboard>
         </Bottomdiv>
+        <div
+          style={{
+            width: "100%",
+            textAlign: "center",
+            borderBottom: "1px solid #aaa",
+            lineHeight: "0.1em",
+            margin: "2rem 0",
+          }}
+        />
       </Container>
     </>
   );
@@ -275,7 +284,7 @@ const Container = styled.div`
   align-items: center;
   flex-direction: column;
   width: 80%;
-  margin-top: 120rem;
+  margin-top: 125rem;
 `;
 
 const STitleDiv = styled.div`

@@ -16,8 +16,9 @@ export default function DeployzInstall() {
         </STitleDiv>
         <SDescDiv>
           <SDescP>
-            DeployZ를 설치하고{" "}
-            <span style={{ color: `${theme.colors.error}` }}>자동배포</span>하기
+            DeployZ를 설치하고&nbsp;
+            <span style={{ color: `${theme.colors.error}` }}>자동 배포</span>
+            하기
           </SDescP>
         </SDescDiv>
         <div
@@ -30,7 +31,7 @@ export default function DeployzInstall() {
           }}
         />
         <Bottomdiv>
-          <NameDiv>1. Docker Hub에서 도커 이미지 다운로드</NameDiv>
+          <NameDiv>1. Docker Hub 에서 도커 이미지 다운로드</NameDiv>
           <CopyToClipboard
             className="Toram"
             text="https://hub.docker.com/"

@@ -91,7 +91,7 @@ const SDescDiv = styled.div`
   align-items: center;
   text-align: center;
   flex-direction: column;
-  padding-bottom: 2rem;
+  padding-bottom: 1.5rem;
 `;
 
 const Container = styled.div`
@@ -130,6 +130,6 @@ const Contentdiv = styled.div`
   justify-content: center;
   align-items: start;
   flex-direction: column;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: ${theme.fontWeight.normal};
 `;
