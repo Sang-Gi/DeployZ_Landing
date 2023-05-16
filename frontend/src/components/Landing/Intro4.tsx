@@ -43,7 +43,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 65vh;
+  height: 57vh;
   width: 100%;
   z-index: 9999;
   background-color: ${theme.colors.primary};

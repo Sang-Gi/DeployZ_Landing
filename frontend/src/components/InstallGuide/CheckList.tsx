@@ -19,7 +19,15 @@ export default function CheckList() {
             <br /> 2. SSH 접속 환경(.pem 키)
           </SDescP>
         </SDescDiv>
-        <hr />
+        <div
+          style={{
+            width: "100%",
+            textAlign: "center",
+            borderBottom: "1px solid #aaa",
+            lineHeight: "0.1em",
+            margin: "10px 0 20px",
+          }}
+        />
         <Bottomdiv>
           <OneIcon />
           <LeftContainer>
@@ -37,10 +45,20 @@ export default function CheckList() {
             <Contentdiv>.pem 키</Contentdiv>
           </LeftContainer>
         </Bottomdiv>
+        <div
+          style={{
+            width: "100%",
+            textAlign: "center",
+            borderBottom: "1px solid #aaa",
+            lineHeight: "0.1em",
+            margin: "2rem 0",
+          }}
+        />
       </Container>
     </>
   );
 }
+
 const OneIcon = mstyled(LooksOneRoundedIcon)({
   fontSize: "6rem",
   color: theme.colors.secondary,
@@ -73,6 +91,7 @@ const SDescDiv = styled.div`
   align-items: center;
   text-align: center;
   flex-direction: column;
+  padding-bottom: 2rem;
 `;
 
 const Container = styled.div`
@@ -80,19 +99,21 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #fff;
+  width: 80%;
 `;
 
 const STitleDiv = styled.div`
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   color: ${theme.colors.primary};
-  font-weight: ${theme.fontWeight.semibold};
+  font-weight: ${theme.fontWeight.extrabold};
+  letter-spacing: 0.5rem;
 `;
 
 const Bottomdiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 2rem;
 `;
 const LeftContainer = styled.div`
   padding-right: 5rem;

@@ -14,7 +14,7 @@ export default function InstallGuidePage() {
 }
 
 const Container = styled.div`
-  height: 93vh;
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;

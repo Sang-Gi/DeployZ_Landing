@@ -10,15 +10,28 @@ import styled from "styled-components";
 import CheckList from "@components/InstallGuide/CheckList";
 import DockerInstall from "./DockerInstall";
 import DeployzInstall from "./DeployzInstall";
+import {
+  BsFill1CircleFill,
+  BsFill2CircleFill,
+  BsFill3CircleFill,
+} from "react-icons/bs";
 
 export default function Installguide() {
   const tabIndex = useRecoilValue(tabIndexState);
   const [currentTab, clickTab] = useState(tabIndex);
 
   const menuArr = [
-    { name: "Tab1", content: CheckList },
-    { name: "Tab2", content: DockerInstall },
-    { name: "Tab3", content: DeployzInstall },
+    { name: "체크 리스트", icon: <BsFill1CircleFill />, content: CheckList },
+    {
+      name: "Docker 설치",
+      icon: <BsFill2CircleFill />,
+      content: DockerInstall,
+    },
+    {
+      name: "DeployZ 설치",
+      icon: <BsFill3CircleFill />,
+      content: DeployzInstall,
+    },
   ];
 
   useEffect(() => {
@@ -38,6 +51,7 @@ export default function Installguide() {
               className={index === currentTab ? "submenu focused" : "submenu"}
               onClick={() => selectMenuHandler(index)}
             >
+              {el.icon}&ensp;
               {el.name}
             </li>
           ))}
@@ -59,8 +73,10 @@ const TabMenu = styled.ul`
   .submenu {
     // 기본 Tabmenu 에 대한 CSS를 구현
     display: flex;
-    width: calc(50% / 3);
-    padding: 3rem;
+    justify-content: center;
+    align-items: center;
+    width: calc(45% / 3);
+    padding: 2rem;
     font-size: 2rem;
     transition: 0.5s;
     border-radius: 10px 10px 0px 0px;
@@ -68,7 +84,10 @@ const TabMenu = styled.ul`
   .focused {
     //선택된 Tabmenu 에만 적용되는 CSS를 구현
     background-color: ${theme.colors.white};
-    color: ${theme.colors.primary};
+    color: ${theme.colors.secondary};
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
@@ -76,8 +95,8 @@ const Desc = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 90vw;
-  height: 70vh;
+  width: 70vw;
+  height: 80vh;
   background-color: ${theme.colors.white};
   border-radius: 1rem;
 `;
