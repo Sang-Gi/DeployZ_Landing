@@ -99,4 +99,8 @@ const Desc = styled.div`
   height: 80vh;
   background-color: ${theme.colors.white};
   border-radius: 1rem;
+  overflow: auto;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
