@@ -37,7 +37,7 @@ export default function DockerInstall() {
         <Bottomdiv>
           <CopyToClipboard
             className="Toram"
-            text="sudo systemctl stop nginx"
+            text="sudo apt-get update"
             onCopy={() => info("복사되었습니다.")}
           >
             <ColorContainer>
@@ -83,24 +83,29 @@ lsb-release"
           <Title>| 도커의 공식 GPG Key 추가</Title>
           <CopyToClipboard
             className="Toram"
-            text="sudo letsencrypt certonly --standalone -d"
+            text="sudo mkdir -p /etc/apt/keyrings"
             onCopy={() => info("복사되었습니다.")}
           >
             <ColorContainer>
-              <text>sudo mkdir -p /etc/apt/keyrings</text>
+              <span style={{ fontWeight: `${theme.fontWeight.extrabold}` }}>
+                $
+              </span>
+              &nbsp;sudo mkdir -p /etc/apt/keyrings
               <CopyIcon />
             </ColorContainer>
           </CopyToClipboard>
           <CopyToClipboard
             className="Toram"
-            text="cd /etc/letsencrypt/live/"
+            text="curl -fsSL https://download.docker.com/linux/ubuntu/gpg |
+            sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg"
             onCopy={() => info("복사되었습니다.")}
           >
             <ColorContainer>
-              <text>
-                curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo
-                gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-              </text>
+              <span style={{ fontWeight: `${theme.fontWeight.extrabold}` }}>
+                $
+              </span>
+              &nbsp; curl -fsSL https://download.docker.com/linux/ubuntu/gpg |
+              sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
               <CopyIcon />
             </ColorContainer>
           </CopyToClipboard>
@@ -118,14 +123,20 @@ lsb-release"
           <Title>| 레포지토리 셋업</Title>
           <CopyToClipboard
             className="Toram"
-            text="sudo su root"
+            text="echo \
+deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+$(lsb_release -cs) stable | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null"
             onCopy={() => info("복사되었습니다.")}
           >
             <ColorContainer>
-              <text>
-                curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo
-                gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-              </text>
+              <span style={{ fontWeight: `${theme.fontWeight.extrabold}` }}>
+                $
+              </span>
+              &nbsp; echo \ "deb [arch=$(dpkg --print-architecture)
+              signed-by=/etc/apt/keyrings/docker.gpg]
+              https://download.docker.com/linux/ubuntu \ $(lsb_release -cs)
+              stable" | sudo tee /etc/apt/sources.list.d/docker.list {">"}{" "}
+              /dev/null
               <CopyIcon />
             </ColorContainer>
           </CopyToClipboard>
@@ -143,24 +154,28 @@ lsb-release"
           <Title>| 도커 엔진 설치</Title>
           <CopyToClipboard
             className="Toram"
-            text="sudo systemctl restart nginx"
+            text="sudo apt-get update"
             onCopy={() => info("복사되었습니다.")}
           >
             <ColorContainer>
-              <text>sudo apt-get update</text>
+              <span style={{ fontWeight: `${theme.fontWeight.extrabold}` }}>
+                $
+              </span>
+              &nbsp;sudo apt-get update
               <CopyIcon />
             </ColorContainer>
           </CopyToClipboard>
           <CopyToClipboard
             className="Toram"
-            text="sudo systemctl restart nginx"
+            text="sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin"
             onCopy={() => info("복사되었습니다.")}
           >
             <ColorContainer>
-              <text>
-                sudo apt-get install docker-ce docker-ce-cli containerd.io
-                docker-compose-plugin
-              </text>
+              <span style={{ fontWeight: `${theme.fontWeight.extrabold}` }}>
+                $
+              </span>
+              &nbsp; sudo apt-get install docker-ce docker-ce-cli containerd.io
+              docker-compose-plugin
               <CopyIcon />
             </ColorContainer>
           </CopyToClipboard>
@@ -178,11 +193,14 @@ lsb-release"
           <Title>| 도커 설치 확인</Title>
           <CopyToClipboard
             className="Toram"
-            text="sudo systemctl restart nginx"
+            text="sudo docker -v"
             onCopy={() => info("복사되었습니다.")}
           >
             <ColorContainer>
-              <text>sudo docker -v</text>
+              <span style={{ fontWeight: `${theme.fontWeight.extrabold}` }}>
+                $
+              </span>
+              &nbsp;sudo docker -v
               <CopyIcon />
             </ColorContainer>
           </CopyToClipboard>
@@ -200,21 +218,27 @@ lsb-release"
           <Title>| Nginx 설치</Title>
           <CopyToClipboard
             className="Toram"
-            text="sudo systemctl restart nginx"
+            text="sudo apt-get update"
             onCopy={() => info("복사되었습니다.")}
           >
             <ColorContainer>
-              <text>sudo apt-get update</text>
+              <span style={{ fontWeight: `${theme.fontWeight.extrabold}` }}>
+                $
+              </span>
+              &nbsp;sudo apt-get update
               <CopyIcon />
             </ColorContainer>
           </CopyToClipboard>
           <CopyToClipboard
             className="Toram"
-            text="sudo systemctl restart nginx"
+            text="sudo apt-get install nginx"
             onCopy={() => info("복사되었습니다.")}
           >
             <ColorContainer>
-              <text>sudo apt-get install nginx</text>
+              <span style={{ fontWeight: `${theme.fontWeight.extrabold}` }}>
+                $
+              </span>
+              &nbsp;sudo apt-get install nginx
               <CopyIcon />
             </ColorContainer>
           </CopyToClipboard>
@@ -227,6 +251,7 @@ const Title = styled.div`
   font-size: 2rem;
   color: ${theme.colors.primary};
   font-weight: ${theme.fontWeight.extraBold};
+  margin-bottom: 1rem;
 `;
 const FileDownload = mstyled(FileDownloadIcon)({
   fontSize: "6.5rem",
@@ -278,6 +303,7 @@ const Container = styled.div`
   align-items: center;
   flex-direction: column;
   width: 80%;
+  margin-top: 120rem;
 `;
 
 const STitleDiv = styled.div`
