@@ -9,7 +9,7 @@ export default function Installguide() {
   const [currentTab, clickTab] = useState(0);
 
   const menuArr = [
-    { name: "Tab1", content: "CheckList" },
+    { name: "Tab1", content: CheckList },
     { name: "Tab2", content: CheckList },
     { name: "Tab3", content: CheckList },
   ];
