@@ -32,16 +32,16 @@ export default function DeployzInstall() {
         />
         <Bottomdiv>
           <NameDiv>1. Docker Hub 에서 도커 이미지 다운로드</NameDiv>
-          <CopyToClipboard
-            className="Toram"
-            text="https://hub.docker.com/"
-            onCopy={() => info("복사되었습니다.")}
-          >
-            <ColorContainer>
-              $ &nbsp;https://hub.docker.com/
+          <ColorContainer>
+            $ &nbsp;https://hub.docker.com/
+            <CopyToClipboard
+              className="Toram"
+              text="https://hub.docker.com/"
+              onCopy={() => info("복사되었습니다.")}
+            >
               <CopyIcon />
-            </ColorContainer>
-          </CopyToClipboard>
+            </CopyToClipboard>
+          </ColorContainer>
         </Bottomdiv>
         <div
           style={{
@@ -54,16 +54,16 @@ export default function DeployzInstall() {
         />
         <Bottomdiv>
           <NameDiv>2. 도커 컨테이너 실행</NameDiv>
-          <CopyToClipboard
-            className="Toram"
-            text="docker run --name test -d -p 8784:80 deployz:test"
-            onCopy={() => info("복사되었습니다.")}
-          >
-            <ColorContainer>
-              $ &nbsp; docker run --name test -d -p 8784:80 deployz:test
+          <ColorContainer>
+            $ &nbsp; docker run --name test -d -p 8784:80 deployz:test
+            <CopyToClipboard
+              className="Toram"
+              text="docker run --name test -d -p 8784:80 deployz:test"
+              onCopy={() => info("복사되었습니다.")}
+            >
               <CopyIcon />
-            </ColorContainer>
-          </CopyToClipboard>
+            </CopyToClipboard>
+          </ColorContainer>
         </Bottomdiv>
         <div
           style={{
