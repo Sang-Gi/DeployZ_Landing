@@ -8,7 +8,7 @@ export default function Header({ type }: { type: String }) {
 
   return (
     <Container type={type}>
-      <Logo alt="logo" src={LogoPic} onClick={() => navigate("/")} />
+      <Logo alt="logo" src={LogoPic} onClick={() => navigate("/install")} />
     </Container>
   );
 }
