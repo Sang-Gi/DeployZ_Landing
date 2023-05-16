@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 //import css
 import styled, { keyframes } from "styled-components";
 import { motion } from "framer-motion";
@@ -11,6 +12,20 @@ import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import { styled as mstyled } from "@mui/material/styles";
 
 export default function InstallGuidePage() {
+  const navigate = useNavigate();
+
+  const handleCheckClick = () => {
+    navigate("/install/check");
+  };
+
+  const handleDockerClick = () => {
+    navigate("/install/docker");
+  };
+
+  const handleDeployzClick = () => {
+    navigate("/install/deployz");
+  };
+
   return (
     <ModalContainer>
       <SContainer>
@@ -29,19 +44,19 @@ export default function InstallGuidePage() {
             <CircleIcon>
               <LaptopIcon />
             </CircleIcon>
-            <SBuildDiv>체크 리스트</SBuildDiv>
+            <SBuildDiv onClick={handleCheckClick}>체크 리스트</SBuildDiv>
           </SInstallGuideClick>
           <SInstallGuideClick>
             <CircleIcon>
               <FileDownload />
             </CircleIcon>
-            <SBuildDiv>Docker 설치</SBuildDiv>
+            <SBuildDiv onClick={handleDockerClick}>Docker 설치</SBuildDiv>
           </SInstallGuideClick>
           <SInstallGuideClick>
             <CircleIcon>
               <CloudUpload />
             </CircleIcon>
-            <SBuildDiv>DeployZ 설치</SBuildDiv>
+            <SBuildDiv onClick={handleDeployzClick}>DeployZ 설치</SBuildDiv>
           </SInstallGuideClick>
         </SInstallGuideButtonDiv>
       </SContainer>
