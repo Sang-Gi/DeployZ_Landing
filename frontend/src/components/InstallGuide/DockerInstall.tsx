@@ -79,11 +79,155 @@ lsb-release"
             margin: "2rem 0",
           }}
         />
-        | 도커의 공식 GPG Key 추가
+        <Bottomdiv>
+          <Title>| 도커의 공식 GPG Key 추가</Title>
+          <CopyToClipboard
+            className="Toram"
+            text="sudo letsencrypt certonly --standalone -d"
+            onCopy={() => info("복사되었습니다.")}
+          >
+            <ColorContainer>
+              <text>sudo mkdir -p /etc/apt/keyrings</text>
+              <CopyIcon />
+            </ColorContainer>
+          </CopyToClipboard>
+          <CopyToClipboard
+            className="Toram"
+            text="cd /etc/letsencrypt/live/"
+            onCopy={() => info("복사되었습니다.")}
+          >
+            <ColorContainer>
+              <text>
+                curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo
+                gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+              </text>
+              <CopyIcon />
+            </ColorContainer>
+          </CopyToClipboard>
+        </Bottomdiv>
+        <div
+          style={{
+            width: "100%",
+            textAlign: "center",
+            borderBottom: "1px solid #aaa",
+            lineHeight: "0.1em",
+            margin: "2rem 0",
+          }}
+        />
+        <Bottomdiv>
+          <Title>| 레포지토리 셋업</Title>
+          <CopyToClipboard
+            className="Toram"
+            text="sudo su root"
+            onCopy={() => info("복사되었습니다.")}
+          >
+            <ColorContainer>
+              <text>
+                curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo
+                gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+              </text>
+              <CopyIcon />
+            </ColorContainer>
+          </CopyToClipboard>
+        </Bottomdiv>
+        <div
+          style={{
+            width: "100%",
+            textAlign: "center",
+            borderBottom: "1px solid #aaa",
+            lineHeight: "0.1em",
+            margin: "2rem 0",
+          }}
+        />
+        <Bottomdiv>
+          <Title>| 도커 엔진 설치</Title>
+          <CopyToClipboard
+            className="Toram"
+            text="sudo systemctl restart nginx"
+            onCopy={() => info("복사되었습니다.")}
+          >
+            <ColorContainer>
+              <text>sudo apt-get update</text>
+              <CopyIcon />
+            </ColorContainer>
+          </CopyToClipboard>
+          <CopyToClipboard
+            className="Toram"
+            text="sudo systemctl restart nginx"
+            onCopy={() => info("복사되었습니다.")}
+          >
+            <ColorContainer>
+              <text>
+                sudo apt-get install docker-ce docker-ce-cli containerd.io
+                docker-compose-plugin
+              </text>
+              <CopyIcon />
+            </ColorContainer>
+          </CopyToClipboard>
+        </Bottomdiv>
+        <div
+          style={{
+            width: "100%",
+            textAlign: "center",
+            borderBottom: "1px solid #aaa",
+            lineHeight: "0.1em",
+            margin: "2rem 0",
+          }}
+        />
+        <Bottomdiv>
+          <Title>| 도커 설치 확인</Title>
+          <CopyToClipboard
+            className="Toram"
+            text="sudo systemctl restart nginx"
+            onCopy={() => info("복사되었습니다.")}
+          >
+            <ColorContainer>
+              <text>sudo docker -v</text>
+              <CopyIcon />
+            </ColorContainer>
+          </CopyToClipboard>
+        </Bottomdiv>
+        <div
+          style={{
+            width: "100%",
+            textAlign: "center",
+            borderBottom: "1px solid #aaa",
+            lineHeight: "0.1em",
+            margin: "2rem 0",
+          }}
+        />
+        <Bottomdiv>
+          <Title>| Nginx 설치</Title>
+          <CopyToClipboard
+            className="Toram"
+            text="sudo systemctl restart nginx"
+            onCopy={() => info("복사되었습니다.")}
+          >
+            <ColorContainer>
+              <text>sudo apt-get update</text>
+              <CopyIcon />
+            </ColorContainer>
+          </CopyToClipboard>
+          <CopyToClipboard
+            className="Toram"
+            text="sudo systemctl restart nginx"
+            onCopy={() => info("복사되었습니다.")}
+          >
+            <ColorContainer>
+              <text>sudo apt-get install nginx</text>
+              <CopyIcon />
+            </ColorContainer>
+          </CopyToClipboard>
+        </Bottomdiv>
       </Container>
     </>
   );
 }
+const Title = styled.div`
+  font-size: 2rem;
+  color: ${theme.colors.primary};
+  font-weight: ${theme.fontWeight.extraBold};
+`;
 const FileDownload = mstyled(FileDownloadIcon)({
   fontSize: "6.5rem",
   color: theme.colors.primary,
