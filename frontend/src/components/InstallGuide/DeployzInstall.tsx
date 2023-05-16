@@ -12,47 +12,46 @@ import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 export default function DeployzInstall() {
   return (
     <>
-      <ModalContainer>
-        <SInstallGuideNameDiv>
-          <STitleDiv>
-            <CloudUpload />
-            DeployZ 설치
-          </STitleDiv>
-          <SDescDiv>
-            <SDescP>DeployZ를 설치하고 자동배포하기</SDescP>
-          </SDescDiv>
-        </SInstallGuideNameDiv>
-        {timelineData.map((data, index) => (
-          <VerticalTimelineElement
-            intersectionObserverProps={{
-              root: null,
-              rootMargin: "0px",
-              threshold: 1.0,
-            }}
-            key={index}
-            iconStyle={{
-              background: `${theme.colors.secondary}`,
-              color: `${theme.colors.white}`,
-            }}
-            icon={data.icon}
-            contentStyle={{
-              borderRadius: "1rem",
-              width: "88%",
-              padding: "2rem",
-            }}
-            style={{ margin: "1rem 0" }}
-          >
-            <NumTitle>{data.title}</NumTitle>
-            {data.content}
-          </VerticalTimelineElement>
-        ))}
-      </ModalContainer>
+      {/* <Container></Container> */}
+      <SInstallGuideNameDiv>
+        <STitleDiv>
+          <CloudUpload />
+          DeployZ 설치
+        </STitleDiv>
+        <SDescDiv>
+          <SDescP>DeployZ를 설치하고 자동배포하기</SDescP>
+        </SDescDiv>
+      </SInstallGuideNameDiv>
+      <Contentdiv>
+        <CopyToClipboard
+          className="Toram"
+          text="sudo systemctl stop nginx"
+          onCopy={() => info("복사되었습니다.")}
+        >
+          <ColorContainer>
+            <text>https://hub.docker.com/</text>
+            <CopyIcon />
+          </ColorContainer>
+        </CopyToClipboard>
+      </Contentdiv>
+      <Contentdiv>
+        <CopyToClipboard
+          className="Toram"
+          text="sudo systemctl stop nginx"
+          onCopy={() => info("복사되었습니다.")}
+        >
+          <ColorContainer>
+            <text>https://hub.docker.com/</text>
+            <CopyIcon />
+          </ColorContainer>
+        </CopyToClipboard>
+      </Contentdiv>
     </>
   );
 }
 const CloudUpload = mstyled(CloudUploadIcon)({
   fontSize: "6.5rem",
-  color: theme.colors.white,
+  color: theme.colors.primary,
   position: "relative",
   top: "1.8rem",
   paddingRight: "1.5rem",
@@ -62,7 +61,7 @@ const SDescP = styled.p`
   font-size: 1.5rem;
   font-weight: ${theme.fontWeight.normal};
   line-height: 160%;
-  color: ${theme.colors.white};
+  color: ${theme.colors.primary};
 `;
 
 const SDescDiv = styled.div`
@@ -84,28 +83,10 @@ const SInstallGuideNameDiv = styled.div`
 
 const STitleDiv = styled.div`
   font-size: 4.5rem;
-  color: ${theme.colors.white};
+  color: ${theme.colors.primary};
   font-weight: ${theme.fontWeight.semibold};
 `;
 
-const ModalContainer = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
-  height: 85%;
-  border: none;
-  padding: 0 1rem;
-  /* box-shadow: 0 2px 4px, 0px 1px 2px inset; */
-  border-radius: 4vh;
-  /* background: ${theme.colors.container}; */
-  color: ${theme.colors.primary};
-  overflow: auto;
-  ::-webkit-scrollbar {
-    display: none;
-  }
-`;
 const CopyIcon = mstyled(ContentCopyIcon)({
   marginLeft: "1rem",
   color: `${theme.colors.primary}`,
@@ -116,13 +97,7 @@ const CopyIcon = mstyled(ContentCopyIcon)({
     cursor: "pointer",
   },
 });
-const NumTitle = styled.div`
-  display: flex;
-  color: ${theme.colors.primary};
-  font-weight: ${theme.fontWeight.extrabold};
-  padding-bottom: 0.5rem;
-  font-size: 2.2rem;
-`;
+
 const Contentdiv = styled.div`
   display: flex;
   justify-content: center;
@@ -130,6 +105,7 @@ const Contentdiv = styled.div`
   flex-direction: column;
   padding: 0;
 `;
+
 const ColorContainer = styled.div`
   background-color: ${theme.colors.lightgray};
   font-weight: ${theme.fontWeight.semibold};
@@ -138,42 +114,3 @@ const ColorContainer = styled.div`
   border-radius: 1rem;
   margin-top: 1rem;
 `;
-
-const timelineData = [
-  {
-    icon: <RiNumber1 />,
-    title: "1. Docker Hub에서 도커 이미지 다운로드",
-    content: (
-      <Contentdiv>
-        <CopyToClipboard
-          className="Toram"
-          text="sudo systemctl stop nginx"
-          onCopy={() => info("복사되었습니다.")}
-        >
-          <ColorContainer>
-            <text>https://hub.docker.com/</text>
-            <CopyIcon />
-          </ColorContainer>
-        </CopyToClipboard>
-      </Contentdiv>
-    ),
-  },
-  {
-    icon: <RiNumber2 />,
-    title: "2. 도커 컨테이너 실행",
-    content: (
-      <Contentdiv>
-        <CopyToClipboard
-          className="Toram"
-          text="sudo apt-get update"
-          onCopy={() => info("복사되었습니다.")}
-        >
-          <ColorContainer>
-            <text>docker run --name test -d -p 8784:80 deployz:test</text>
-            <CopyIcon />
-          </ColorContainer>
-        </CopyToClipboard>
-      </Contentdiv>
-    ),
-  },
-];
