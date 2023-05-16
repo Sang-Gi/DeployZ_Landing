@@ -122,7 +122,7 @@ const Title = styled.div`
   display: flex;
   color: ${theme.colors.primary};
   font-weight: ${theme.fontWeight.extrabold};
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
   font-size: 2.2rem;
 `;
 const Contentdiv = styled.div`

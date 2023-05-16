@@ -287,7 +287,7 @@ const STitleDiv = styled.div`
 const Bottomdiv = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   flex-direction: column;
   padding: 2rem;
   width: 60%;
