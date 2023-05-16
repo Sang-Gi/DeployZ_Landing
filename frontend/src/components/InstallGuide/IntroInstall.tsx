@@ -29,9 +29,9 @@ export default function IntroInstall() {
           <STitleDiv>설치 가이드 라인</STitleDiv>
           <SDescDiv>
             <SDescP>
-              쉽고 빠르게 배포 가능한 어쩌구 저쩌구 쉽고 빠르게 배포 가능한
+              간단한 설정만으로 배포 가능한 DeployZ를 사용해보세요!
               <br />
-              어쩌구 저쩌구 쉽고 빠르게 배포 가능한 어쩌구 저쩌구
+              아래의 설치 가이드를 따라하시면 쉽게 배포가 가능합니다.
             </SDescP>
           </SDescDiv>
         </SInstallGuideNameDiv>
@@ -166,6 +166,7 @@ const SDescP = styled.p`
   font-weight: ${theme.fontWeight.normal};
   line-height: 160%;
   color: ${theme.colors.white};
+  line-height: 2.5rem;
 `;
 
 const SDescDiv = styled.div`
