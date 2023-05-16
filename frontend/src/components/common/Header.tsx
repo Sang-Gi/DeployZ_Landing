@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { theme } from "@/styles/theme";
 import { useNavigate } from "react-router-dom";
-import LogoPic from "@/assets/logo.png";
+import LogoPic from "@/assets/logo/logo.png";
 
 export default function Header({ type }: { type: String }) {
   const navigate = useNavigate();
