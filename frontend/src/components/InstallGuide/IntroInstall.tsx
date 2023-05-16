@@ -14,16 +14,8 @@ import { styled as mstyled } from "@mui/material/styles";
 export default function IntroInstall() {
   const navigate = useNavigate();
 
-  const handleCheckClick = () => {
+  const handleClick = () => {
     navigate("/installguide");
-  };
-
-  const handleDockerClick = () => {
-    navigate("/install/docker");
-  };
-
-  const handleDeployzClick = () => {
-    navigate("/install/deployz");
   };
 
   return (
@@ -44,19 +36,19 @@ export default function IntroInstall() {
             <CircleIcon>
               <LaptopIcon />
             </CircleIcon>
-            <SBuildDiv onClick={handleCheckClick}>체크 리스트</SBuildDiv>
+            <SBuildDiv onClick={handleClick}>체크 리스트</SBuildDiv>
           </SInstallGuideClick>
           <SInstallGuideClick>
             <CircleIcon>
               <FileDownload />
             </CircleIcon>
-            <SBuildDiv onClick={handleDockerClick}>Docker 설치</SBuildDiv>
+            <SBuildDiv onClick={handleClick}>Docker 설치</SBuildDiv>
           </SInstallGuideClick>
           <SInstallGuideClick>
             <CircleIcon>
               <CloudUpload />
             </CircleIcon>
-            <SBuildDiv onClick={handleDeployzClick}>DeployZ 설치</SBuildDiv>
+            <SBuildDiv onClick={handleClick}>DeployZ 설치</SBuildDiv>
           </SInstallGuideClick>
         </SInstallGuideButtonDiv>
       </SContainer>

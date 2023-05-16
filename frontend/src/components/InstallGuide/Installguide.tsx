@@ -3,6 +3,8 @@ import { useState } from "react";
 import styled from "styled-components";
 import CheckList from "@components/InstallGuide/CheckList";
 import React from "react";
+import DockerInstall from "./DockerInstall";
+import DeployzInstall from "./DeployzInstall";
 
 export default function Installguide() {
   // Tab Menu 중 현재 어떤 Tab이 선택되어 있는지 확인하기 위한 currentTab 상태와 currentTab을 갱신하는 함수가 존재해야 하고, 초기값은 0.
@@ -10,8 +12,8 @@ export default function Installguide() {
 
   const menuArr = [
     { name: "Tab1", content: CheckList },
-    { name: "Tab2", content: CheckList },
-    { name: "Tab3", content: CheckList },
+    { name: "Tab2", content: DockerInstall },
+    { name: "Tab3", content: DeployzInstall },
   ];
 
   const selectMenuHandler = (index) => {
