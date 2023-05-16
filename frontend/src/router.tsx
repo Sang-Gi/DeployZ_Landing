@@ -9,7 +9,7 @@ const router = createBrowserRouter([
   { path: "/", element: <LandingPage /> },
   { path: "/intro", element: <IntroPage /> },
   { path: "/install", element: <InstallPage /> },
-  { path: "/installguide", element: <InstallGuidePage /> },
+  { path: "/installguide/:idx", element: <InstallGuidePage /> },
   { path: "*", element: <Page404 /> },
 ]);
 

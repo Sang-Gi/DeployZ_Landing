@@ -1,14 +1,19 @@
+import React, { useEffect } from "react";
+import { useRecoilValue } from "recoil";
+import { tabIndexState } from "./tab";
+//import css
 import { theme } from "@/styles/theme";
 import { useState } from "react";
 import styled from "styled-components";
+
+//import component
 import CheckList from "@components/InstallGuide/CheckList";
-import React from "react";
 import DockerInstall from "./DockerInstall";
 import DeployzInstall from "./DeployzInstall";
 
 export default function Installguide() {
-  // Tab Menu 중 현재 어떤 Tab이 선택되어 있는지 확인하기 위한 currentTab 상태와 currentTab을 갱신하는 함수가 존재해야 하고, 초기값은 0.
-  const [currentTab, clickTab] = useState(0);
+  const tabIndex = useRecoilValue(tabIndexState);
+  const [currentTab, clickTab] = useState(tabIndex);
 
   const menuArr = [
     { name: "Tab1", content: CheckList },
@@ -16,9 +21,11 @@ export default function Installguide() {
     { name: "Tab3", content: DeployzInstall },
   ];
 
+  useEffect(() => {
+    clickTab(tabIndex);
+  }, [tabIndex]);
+
   const selectMenuHandler = (index) => {
-    // parameter로 현재 선택한 인덱스 값을 전달해야 하며, 이벤트 객체(event)는 쓰지 않는다
-    // 해당 함수가 실행되면 현재 선택된 Tab Menu 가 갱신.
     clickTab(index);
   };
 

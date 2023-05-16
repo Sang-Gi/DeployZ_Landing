@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import { tabIndexState } from "./tab";
 //import css
 import styled, { keyframes } from "styled-components";
 import { motion } from "framer-motion";
@@ -13,9 +15,11 @@ import { styled as mstyled } from "@mui/material/styles";
 
 export default function IntroInstall() {
   const navigate = useNavigate();
+  const [tabIndex, setTabIndex] = useRecoilState(tabIndexState);
 
-  const handleClick = () => {
-    navigate("/installguide");
+  const handleClick = (index) => {
+    setTabIndex(index);
+    navigate(`/installguide/${index}`);
   };
 
   return (
@@ -36,19 +40,19 @@ export default function IntroInstall() {
             <CircleIcon>
               <LaptopIcon />
             </CircleIcon>
-            <SBuildDiv onClick={handleClick}>체크 리스트</SBuildDiv>
+            <SBuildDiv onClick={() => handleClick(0)}>체크 리스트</SBuildDiv>
           </SInstallGuideClick>
           <SInstallGuideClick>
             <CircleIcon>
               <FileDownload />
             </CircleIcon>
-            <SBuildDiv onClick={handleClick}>Docker 설치</SBuildDiv>
+            <SBuildDiv onClick={() => handleClick(1)}>Docker 설치</SBuildDiv>
           </SInstallGuideClick>
           <SInstallGuideClick>
             <CircleIcon>
               <CloudUpload />
             </CircleIcon>
-            <SBuildDiv onClick={handleClick}>DeployZ 설치</SBuildDiv>
+            <SBuildDiv onClick={() => handleClick(2)}>DeployZ 설치</SBuildDiv>
           </SInstallGuideClick>
         </SInstallGuideButtonDiv>
       </SContainer>
