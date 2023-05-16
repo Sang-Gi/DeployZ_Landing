@@ -178,7 +178,7 @@ const SDescDiv = styled.div`
 `;
 
 const STitleDiv = styled.div`
-  font-size: 4.8rem;
+  font-size: 4.3rem;
   color: ${theme.colors.white};
   font-weight: ${theme.fontWeight.semibold};
 `;
