@@ -10,7 +10,7 @@ import styled from "styled-components";
 import CheckList from "@components/InstallGuide/CheckList";
 import DockerInstall from "./DockerInstall";
 import DeployzInstall from "./DeployzInstall";
-import UserRegister from "./Userregister";
+import UserRegister from "./UserRegister";
 import {
   BsFill1CircleFill,
   BsFill2CircleFill,
