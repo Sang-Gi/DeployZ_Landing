@@ -31,7 +31,7 @@ export default function DeployzInstall() {
           }}
         />
         <Bottomdiv>
-          <NameDiv>1. Docker Hub 에서 도커 이미지 다운로드</NameDiv>
+          <Title>1. Docker Hub 에서 도커 이미지 다운로드</Title>
           <ColorContainer>
             $ &nbsp;https://hub.docker.com/
             <CopyToClipboard
@@ -53,7 +53,7 @@ export default function DeployzInstall() {
           }}
         />
         <Bottomdiv>
-          <NameDiv>2. 도커 컨테이너 실행</NameDiv>
+          <Title>2. 도커 컨테이너 실행</Title>
           <ColorContainer>
             $ &nbsp; docker run --name test -d -p 8784:80 deployz:test
             <CopyToClipboard
@@ -79,7 +79,9 @@ export default function DeployzInstall() {
   );
 }
 
-const NameDiv = styled.div`
+const Title = styled.div`
+  display: flex;
+  align-self: start;
   font-size: 2rem;
   color: ${theme.colors.primary};
   font-weight: ${theme.fontWeight.extraBold};
@@ -149,7 +151,7 @@ const STitleDiv = styled.div`
 const Bottomdiv = styled.div`
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   flex-direction: column;
   width: 60%;
   padding: 2rem;

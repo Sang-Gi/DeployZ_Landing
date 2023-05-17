@@ -104,11 +104,10 @@ export default function UserRegister() {
 const Imgdiv = styled.div`
   display: flex;
   padding-top: 1rem;
-  margin-left: -5rem;
   justify-content: space-evenly;
 `;
 const Guide = styled.img`
-  height: 40vh;
+  height: 50vh;
   margin-right: 1rem;
 `;
 const Ex = styled.div`
@@ -118,6 +117,8 @@ const Ex = styled.div`
   margin-top: 1rem;
 `;
 const Title = styled.div`
+  display: flex;
+  align-self: start;
   font-size: 2rem;
   color: ${theme.colors.primary};
   font-weight: ${theme.fontWeight.extraBold};
@@ -175,6 +176,7 @@ const Container = styled.div`
   align-items: center;
   flex-direction: column;
   width: 80%;
+  margin-top: 60rem;
 `;
 
 const STitleDiv = styled.div`
@@ -186,7 +188,7 @@ const STitleDiv = styled.div`
 const Bottomdiv = styled.div`
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   flex-direction: column;
   padding: 2rem;
   width: 60%;

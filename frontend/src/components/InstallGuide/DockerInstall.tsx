@@ -227,6 +227,8 @@ $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev
   );
 }
 const Title = styled.div`
+  display: flex;
+  align-self: start;
   font-size: 2rem;
   color: ${theme.colors.primary};
   font-weight: ${theme.fontWeight.extraBold};
@@ -296,7 +298,7 @@ const STitleDiv = styled.div`
 const Bottomdiv = styled.div`
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   flex-direction: column;
   padding: 2rem;
   width: 60%;
