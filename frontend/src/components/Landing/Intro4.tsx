@@ -16,7 +16,7 @@ export default function Intro4() {
       <Container>
         <div className="title-container">
           <Title>
-            <span>내 서버(?)에 설치하고</span>
+            <span>내 서버에 설치하고</span>
           </Title>
           <Title>
             지금 바로

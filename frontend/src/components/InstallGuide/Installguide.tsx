@@ -10,10 +10,12 @@ import styled from "styled-components";
 import CheckList from "@components/InstallGuide/CheckList";
 import DockerInstall from "./DockerInstall";
 import DeployzInstall from "./DeployzInstall";
+import UserRegister from "./Userregister";
 import {
   BsFill1CircleFill,
   BsFill2CircleFill,
   BsFill3CircleFill,
+  BsFill4CircleFill,
 } from "react-icons/bs";
 
 export default function Installguide() {
@@ -31,6 +33,11 @@ export default function Installguide() {
       name: "DeployZ 설치",
       icon: <BsFill3CircleFill />,
       content: DeployzInstall,
+    },
+    {
+      name: "사용자 등록",
+      icon: <BsFill4CircleFill />,
+      content: UserRegister,
     },
   ];
 
@@ -68,7 +75,7 @@ const TabMenu = styled.ul`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: -1rem;
+  margin-bottom: -1.1rem;
 
   .submenu {
     // 기본 Tabmenu 에 대한 CSS를 구현
@@ -76,7 +83,7 @@ const TabMenu = styled.ul`
     justify-content: center;
     align-items: center;
     width: calc(45% / 3);
-    padding: 2rem;
+    padding: 2.3rem 2rem;
     font-size: 2rem;
     transition: 0.5s;
     border-radius: 10px 10px 0px 0px;
