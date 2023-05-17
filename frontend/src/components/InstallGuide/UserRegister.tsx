@@ -5,6 +5,8 @@ import ContentCopyIcon from "@mui/icons-material/FileCopyRounded";
 import { CopyToClipboard } from "react-copy-to-clipboard/src";
 import { info } from "@components/common/Toast/notify";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
+import guide1 from "@/assets/guide/userguide1.png";
+import guide2 from "@/assets/guide/userguide2.png";
 
 export default function UserRegister() {
   return (
@@ -35,12 +37,12 @@ export default function UserRegister() {
           }}
         />
         <Bottomdiv>
-          <Title>| 도커의 공식 GPG Key 추가</Title>
+          <Title>1. deployz 컨테이너 접속</Title>
           <ColorContainer>
-            $ sudo mkdir -p /etc/apt/keyrings
+            $ docker exec -it deployz /bin/bash
             <CopyToClipboard
               className="Toram"
-              text="sudo mkdir -p /etc/apt/keyrings"
+              text="docker exec -it deployz /bin/bash"
               onCopy={() => info("복사되었습니다.")}
             >
               <CopyIcon />
@@ -56,10 +58,65 @@ export default function UserRegister() {
             margin: "2rem 0",
           }}
         />
+        <Bottomdiv>
+          <Title>2. 발급된 AuthKey 확인</Title>
+          <ColorContainer>
+            $ cat AuthKey
+            <CopyToClipboard
+              className="Toram"
+              text="cat AuthKey"
+              onCopy={() => info("복사되었습니다.")}
+            >
+              <CopyIcon />
+            </CopyToClipboard>
+          </ColorContainer>
+          <Ex>* 인증키 예시 [ 71ab0683c37243649d2712aad62fd654MTUwNzQ0Cg ]</Ex>
+        </Bottomdiv>
+        <div
+          style={{
+            width: "100%",
+            textAlign: "center",
+            borderBottom: "1px solid #aaa",
+            lineHeight: "0.1em",
+            margin: "2rem 0",
+          }}
+        />
+        <Bottomdiv>
+          <Title>3. 사용자 등록 페이지에서 입력 후 인증키 확인</Title>
+          <Imgdiv>
+            <Guide alt="guide1" src={guide1} />
+            <Guide alt="guide2" src={guide2} />
+          </Imgdiv>
+        </Bottomdiv>
+        <div
+          style={{
+            width: "100%",
+            textAlign: "center",
+            borderBottom: "1px solid #aaa",
+            lineHeight: "0.1em",
+            margin: "2rem 0",
+          }}
+        />
       </Container>
     </>
   );
 }
+const Imgdiv = styled.div`
+  display: flex;
+  padding-top: 1rem;
+  margin-left: -5rem;
+  justify-content: space-evenly;
+`;
+const Guide = styled.img`
+  height: 40vh;
+  margin-right: 1rem;
+`;
+const Ex = styled.div`
+  font-size: 1.5rem;
+  color: ${theme.colors.primary};
+  font-weight: ${theme.fontWeight.normal};
+  margin-top: 1rem;
+`;
 const Title = styled.div`
   font-size: 2rem;
   color: ${theme.colors.primary};

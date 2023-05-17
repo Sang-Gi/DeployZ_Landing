@@ -82,7 +82,7 @@ const TabMenu = styled.ul`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: calc(45% / 3);
+    width: calc(50% / 3);
     padding: 2.3rem 2rem;
     font-size: 2rem;
     transition: 0.5s;
