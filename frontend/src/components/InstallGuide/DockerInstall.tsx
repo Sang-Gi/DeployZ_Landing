@@ -27,7 +27,7 @@ export default function DockerInstall() {
         />
         <Bottomdiv>
           <SDescP>
-            <span style={{ color: `${theme.colors.error}` }}>apt의</span> 패키기
+            <span style={{ color: `${theme.colors.error}` }}>apt의</span> 패키지
             인덱스를 최신화하고,
             <br />
             <span style={{ color: `${theme.colors.error}` }}>
@@ -287,7 +287,7 @@ const Container = styled.div`
   align-items: center;
   flex-direction: column;
   width: 80%;
-  margin-top: 170vh;
+  margin-top: 163vh;
 `;
 
 const STitleDiv = styled.div`
