@@ -69,7 +69,7 @@ export default function DeployzInstall() {
           <Ex>
             - 포트 번호는 기본적으로&nbsp;
             <span style={{ fontWeight: `${theme.fontWeight.extrabold}` }}>
-              9090
+              8784
             </span>
             으로 지정합니다. <br />- 원하는 경우 다른 포트 번호로 지정
             가능합니다. (단, 유효한 포트 번호를 입력해주세요.)
@@ -77,11 +77,11 @@ export default function DeployzInstall() {
           <ColorContainer>
             $ &nbsp; docker run -v /var/run/docker.sock:/var/run/docker.sock -v
             /usr/bin/docker:/usr/bin/docker -v
-            /usr/libexec/docker:/usr/libexec/docker --name deployz -d -p 9090:80
+            /usr/libexec/docker:/usr/libexec/docker --name deployz -d -p 8784:80
             eunjikim8784/deployz:latest
             <CopyToClipboard
               className="Toram"
-              text="docker run -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker -v /usr/libexec/docker:/usr/libexec/docker --name deployz -d -p 9090:80 eunjikim8784/deployz:latest"
+              text="docker run -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker -v /usr/libexec/docker:/usr/libexec/docker --name deployz -d -p 8784:80 eunjikim8784/deployz:latest"
               onCopy={() => info("복사되었습니다.")}
             >
               <CopyIcon />
