@@ -76,7 +76,7 @@ const TabMenu = styled.ul`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: -1.1rem;
+  margin-bottom: -1rem;
   :hover {
     transition: all 0.4s ease-out;
     cursor: pointer;

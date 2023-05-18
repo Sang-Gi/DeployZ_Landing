@@ -256,14 +256,6 @@ const ColorContainer = styled.div`
   justify-content: space-between;
 `;
 
-const SDescP = styled.p`
-  font-size: 1.5rem;
-  font-weight: ${theme.fontWeight.normal};
-  line-height: 160%;
-  color: ${theme.colors.primary};
-  margin-top: 0;
-`;
-
 const SDescDiv = styled.div`
   display: flex;
   justify-content: center;
@@ -275,11 +267,10 @@ const SDescDiv = styled.div`
 
 const Container = styled.div`
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 80%;
-  margin-top: 170vh;
+  height: 75vh;
 `;
 
 const STitleDiv = styled.div`
