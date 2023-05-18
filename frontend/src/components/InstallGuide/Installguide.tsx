@@ -55,6 +55,7 @@ export default function Installguide() {
         <TabMenu>
           {menuArr.map((el, index) => (
             <li
+              key={index}
               className={index === currentTab ? "submenu focused" : "submenu"}
               onClick={() => selectMenuHandler(index)}
             >
