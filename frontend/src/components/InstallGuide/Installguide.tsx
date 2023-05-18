@@ -76,6 +76,10 @@ const TabMenu = styled.ul`
   flex-direction: row;
   align-items: center;
   margin-bottom: -1.1rem;
+  :hover {
+    transition: all 0.4s ease-out;
+    cursor: pointer;
+  }
 
   .submenu {
     // 기본 Tabmenu 에 대한 CSS를 구현
@@ -90,6 +94,7 @@ const TabMenu = styled.ul`
   }
   .focused {
     //선택된 Tabmenu 에만 적용되는 CSS를 구현
+    transform: scale(1.1);
     background-color: ${theme.colors.white};
     color: ${theme.colors.secondary};
     display: flex;

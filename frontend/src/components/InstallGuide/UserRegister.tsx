@@ -176,7 +176,7 @@ const Container = styled.div`
   align-items: center;
   flex-direction: column;
   width: 80%;
-  margin-top: 60rem;
+  margin-top: 70vh;
 `;
 
 const STitleDiv = styled.div`
