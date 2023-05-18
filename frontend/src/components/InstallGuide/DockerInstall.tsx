@@ -14,17 +14,8 @@ export default function DockerInstall() {
           <FileDownload />
           Docker 설치
         </STitleDiv>
-        <SDescDiv>
-          <SDescP>
-            <span style={{ color: `${theme.colors.error}` }}>apt의</span> 패키기
-            인덱스를 최신화하고,
-            <br />
-            <span style={{ color: `${theme.colors.error}` }}>
-              apt가 HTTPS를 통해 패키지를 설치
-            </span>
-            할 수 있도록 설정
-          </SDescP>
-        </SDescDiv>
+        <SDescDiv></SDescDiv>
+
         <div
           style={{
             width: "100%",
@@ -35,6 +26,15 @@ export default function DockerInstall() {
           }}
         />
         <Bottomdiv>
+          <SDescP>
+            <span style={{ color: `${theme.colors.error}` }}>apt의</span> 패키기
+            인덱스를 최신화하고,
+            <br />
+            <span style={{ color: `${theme.colors.error}` }}>
+              apt가 HTTPS를 통해 패키지를 설치
+            </span>
+            할 수 있도록 설정
+          </SDescP>
           <ColorContainer>
             $ sudo apt-get update
             <CopyToClipboard
@@ -269,6 +269,7 @@ const SDescP = styled.p`
   font-weight: ${theme.fontWeight.normal};
   line-height: 160%;
   color: ${theme.colors.primary};
+  margin-top: 0;
 `;
 
 const SDescDiv = styled.div`
@@ -286,7 +287,7 @@ const Container = styled.div`
   align-items: center;
   flex-direction: column;
   width: 80%;
-  margin-top: 165vh;
+  margin-top: 170vh;
 `;
 
 const STitleDiv = styled.div`
