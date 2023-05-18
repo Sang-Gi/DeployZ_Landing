@@ -287,7 +287,7 @@ const Container = styled.div`
   align-items: center;
   flex-direction: column;
   width: 80%;
-  margin-top: 163vh;
+  margin-top: 170vh;
 `;
 
 const STitleDiv = styled.div`
