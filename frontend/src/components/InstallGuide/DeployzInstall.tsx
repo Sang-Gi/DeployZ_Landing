@@ -16,8 +16,10 @@ export default function DeployzInstall() {
         </STitleDiv>
         <SDescDiv>
           <SDescP>
-            DeployZ를 설치하고&nbsp;
-            <span style={{ color: `${theme.colors.error}` }}>자동 배포</span>
+            DeployZ를 &nbsp;
+            <span style={{ color: `${theme.colors.error}` }}>설치</span>
+            하고&nbsp;
+            <span style={{ color: `${theme.colors.error}` }}>실행</span>
             하기
           </SDescP>
         </SDescDiv>
@@ -31,12 +33,22 @@ export default function DeployzInstall() {
           }}
         />
         <Bottomdiv>
-          <Title>1. Docker Hub 에서 도커 이미지 다운로드</Title>
+          <Dockerhubdiv>
+            <DockerTitle>
+              1. Docker Hub 에서 도커 이미지 다운로드&nbsp;&nbsp;
+            </DockerTitle>
+            <Linkdiv
+              href="https://hub.docker.com/r/eunjikim8784/deployz"
+              target="_blank"
+            >
+              Docker Hub 주소
+            </Linkdiv>
+          </Dockerhubdiv>
           <ColorContainer>
-            $ &nbsp;https://hub.docker.com/
+            $ &nbsp; docker pull eunjikim8784/deployz
             <CopyToClipboard
               className="Toram"
-              text="https://hub.docker.com/"
+              text="docker pull eunjikim8784/deployz"
               onCopy={() => info("복사되었습니다.")}
             >
               <CopyIcon />
@@ -54,11 +66,22 @@ export default function DeployzInstall() {
         />
         <Bottomdiv>
           <Title>2. 도커 컨테이너 실행</Title>
+          <Ex>
+            - 포트 번호는 기본적으로&nbsp;
+            <span style={{ fontWeight: `${theme.fontWeight.extrabold}` }}>
+              9090
+            </span>
+            으로 지정합니다. <br />- 원하는 경우 다른 포트 번호로 지정
+            가능합니다. (단, 유효한 포트 번호를 입력해주세요.)
+          </Ex>
           <ColorContainer>
-            $ &nbsp; docker run --name test -d -p 8784:80 deployz:test
+            $ &nbsp; docker run -v /var/run/docker.sock:/var/run/docker.sock -v
+            /usr/bin/docker:/usr/bin/docker -v
+            /usr/libexec/docker:/usr/libexec/docker --name deployz -d -p 9090:80
+            eunjikim8784/deployz:latest
             <CopyToClipboard
               className="Toram"
-              text="docker run --name test -d -p 8784:80 deployz:test"
+              text="docker run -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker -v /usr/libexec/docker:/usr/libexec/docker --name deployz -d -p 9090:80 eunjikim8784/deployz:latest"
               onCopy={() => info("복사되었습니다.")}
             >
               <CopyIcon />
@@ -78,7 +101,35 @@ export default function DeployzInstall() {
     </>
   );
 }
-
+const DockerTitle = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: ${theme.colors.primary};
+  font-weight: ${theme.fontWeight.extraBold};
+`;
+const Linkdiv = styled.a`
+  font-weight: ${theme.fontWeight.semibold};
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+const Dockerhubdiv = styled.div`
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+  width: 100%;
+`;
+const Ex = styled.div`
+  font-size: 1.5rem;
+  color: ${theme.colors.primary};
+  font-weight: ${theme.fontWeight.normal};
+  margin-bottom: 1rem;
+  /* display: flex;
+  align-self: start; */
+`;
 const Title = styled.div`
   display: flex;
   align-self: start;
@@ -140,6 +191,7 @@ const Container = styled.div`
   align-items: center;
   flex-direction: column;
   width: 80%;
+  margin-top: 18vh;
 `;
 
 const STitleDiv = styled.div`

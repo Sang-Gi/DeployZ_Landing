@@ -26,15 +26,7 @@ export default function DockerInstall() {
           }}
         />
         <Bottomdiv>
-          <SDescP>
-            <span style={{ color: `${theme.colors.error}` }}>apt의</span> 패키지
-            인덱스를 최신화하고,
-            <br />
-            <span style={{ color: `${theme.colors.error}` }}>
-              apt가 HTTPS를 통해 패키지를 설치
-            </span>
-            할 수 있도록 설정
-          </SDescP>
+          <Title>| 필수 패키지 설치</Title>
           <ColorContainer>
             $ sudo apt-get update
             <CopyToClipboard
